@@ -1,14 +1,13 @@
 <?php
 $host = 'localhost';
-$dbname = 'ViedECE';       // nom base de données
-$user = 'root';            // utilisateur 
-$password = '';            // mot de passe 
+$dbname = 'ViedECE';       
+$user = 'root';            
+$password = '';            
 
 // Bloc try pour gérer la connexion à la base de données
 try {
     // Création d'un objet PDO pour se connecter à la base de données
     // "mysql:host=localhost" indique qu'on se connecte à un serveur MySQL en local
-    // "dbname=ViedECE" est le nom de la base de données
     // "charset=utf8" permet de gérer correctement les accents et caractères spéciaux
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
     
@@ -17,6 +16,6 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 } catch (PDOException $e) {
-    // En cas d'erreur de connexion, on affiche un message d'erreur et on arrête le script
+    // En cas d'erreur de connexion on affiche un message d'erreur et on arrête le script
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
