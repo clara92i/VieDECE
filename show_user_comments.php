@@ -1,4 +1,4 @@
-<?php
+r<?php
 // On démarre la session pour accéder aux informations de l'utilisateur connecté
 session_start();
 
@@ -8,7 +8,7 @@ if (!isset($_GET['pseudo'])) {
 }
 
 // On récupère le pseudo depuis l'URL
-$pseudo = htmlspecialchars(trim($_GET['pseudo'])); // On nettoie le pseudo pour éviter les failles XSS
+$pseudo = htmlspecialchars(trim($_GET['pseudo'])); // On nettoie le pseudo pour éviter les erreurs XSS
 
 // Connexion à la base de données
 try {
@@ -26,7 +26,7 @@ $stmt = $pdo->prepare("
     ORDER BY created_at DESC
 ");
 
-// On exécute la requête en remplaçant `:pseudo` par la vraie valeur
+// On exécute la requête en remplaçant pseudo par la vraie valeur
 $stmt->execute([':pseudo' => $pseudo]);
 
 // On récupère tous les commentaires sous forme de tableau associatif
