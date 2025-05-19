@@ -45,7 +45,6 @@ try {
     $stmt = $pdo->prepare("DELETE FROM comments WHERE id = ?");
     $stmt->execute([$commentId]);
 
-    // Réponse de succès
     echo json_encode(['success' => true]);
 
 } catch (PDOException $e) {
