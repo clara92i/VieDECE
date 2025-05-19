@@ -7,7 +7,7 @@
 - Gérer les interactions via des formulaires HTML et des requêtes SQL.
 - Utiliser le framework CSS **Bootstrap** pour le style.
 - Gérer des sessions utilisateur et des appels AJAX en JavaScript.
-- Travailler en équipe avec **Git** et GitHub.
+- Travailler en équipe avec GitHub.
 
 ---
 
