@@ -1,11 +1,10 @@
 <?php
-// Démarrer la session pour accéder au pseudo de l'utilisateur connecté
 session_start();
 
 // On définit le type de réponse comme étant du JSON
 header('Content-Type: application/json');
 
-// Vérifie si la requête est bien de type POST et si le comment_id est présent
+// Vérifie si la requete est bien de type POST et si le comment_id est présent
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['comment_id'])) {
     echo json_encode(['success' => false, 'message' => 'Requête invalide']);
     exit;
@@ -36,7 +35,7 @@ try {
         exit;
     }
 
-    // Vérifie si le commentaire appartient à l'utilisateur connecté
+    // Vérifie si le commentaire appartient à l'utilisateur
     if ($comment['pseudo'] !== $userPseudo) {
         echo json_encode(['success' => false, 'message' => 'Vous ne pouvez supprimer que vos propres commentaires']);
         exit;
