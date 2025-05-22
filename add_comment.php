@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// AFFICHAGE DE LA PAGE
+// Protection d'ID
 
 $id = isset($_GET['id']) && is_numeric($_GET['id']) ? intval($_GET['id']) : 0;
 if ($id <= 0) {
